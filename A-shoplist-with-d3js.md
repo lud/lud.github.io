@@ -1,3 +1,9 @@
+---
+title: "Make a shoplist app with D3"
+layout: default
+---
+
+
 # A shoplist with D3
 
 ## Data
