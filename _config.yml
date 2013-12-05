@@ -1,0 +1,7 @@
+name: "lud"
+description: "Let's dev tonight"
+url: "http://localhost:4000"
+paginate: 10
+permalink: pretty
+pygments: true
+markdown: rdiscount

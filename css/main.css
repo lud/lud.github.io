@@ -1,0 +1,10 @@
+body {
+    background:#eee;
+}
+
+pre {
+    border:none;
+    border-radius:0;
+    background:rgb(61,61,61);
+    color:#eee;
+}
