@@ -6,7 +6,7 @@ layout: default
 # Hello World qzd
 
 
-Proin eleifend libero accumsan felis luctus nec consectetur purus commodo. Phasellus sodales est nec massa imperdiet commodo. Maecenas risus nulla, placerat vel vestibulum vel, dapibus quis libero.
+Proin eleifend libero accumsan felis luctus nec consectetur purus commodo. Phasellus sodales est nec massa imperdiet commodo. Maecenas risus nulla, placerat vel vestibulum vel, dapibus quis libero [shop](/A-shoplist-with-d3js/).
 
 
 
@@ -21,5 +21,16 @@ foo2(X) ->
         of bar -> baz
          ; _ -> bee
     end.
+
+toString(X) -> toString(X,false).
+
+toString(bar,false) -> "bar";
+toString(bar,true) -> <<"bar">>;
+toString(X,ToBin) ->
+    case ToBin
+        of true -> <<"Other binary">>
+         ; false -> "Some list"
+    end.
+
 {% endhighlight %}
 
