@@ -7,7 +7,7 @@ layout: default
 # A shoplist with D3
 
 
-<iframe src="http://bl.ocks.org/lud/raw/7869565/" width="320"></iframe>
+<iframe src="http://bl.ocks.org/lud/raw/7869565/" width="320"> </iframe>
 
 ## Data
 
