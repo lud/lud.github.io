@@ -7,8 +7,9 @@ layout: default
 # A shoplist with D3
 
 
-<iframe src="http://bl.ocks.org/lud/raw/7869565/" width="320" height="550" style="border:none"> </iframe>
-
+<div class="text-center">
+<iframe src="http://bl.ocks.org/lud/raw/7869565/" width="250" height="550" style="border:none"> </iframe>
+</div>
 ## Data
 
 First we have some lists specifications. In a real world app, this

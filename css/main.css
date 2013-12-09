@@ -1,6 +1,5 @@
 body {
     background:#ffffff;
-    padding-top:1em;
 }
 
 @media (min-width: 992px) {
@@ -42,6 +41,6 @@ h1 {
     padding-top: 20px;
 }
 
-li {
+.global li {
     list-style: square outside none;
 }

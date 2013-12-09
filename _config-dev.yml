@@ -1,6 +1,6 @@
 name: "lud"
 description: "Let's dev tonight"
-url: "http://lud.github.io"
+url: "http://localhost:4000"
 permalink: pretty
 pygments: true
 markdown: rdiscount
