@@ -3,18 +3,35 @@ title: "Make a shoplist app with D3"
 layout: default
 ---
 
-
 # A shoplist with D3
 
 
-<div class="text-center">
-<iframe src="http://bl.ocks.org/lud/raw/7869565/" width="250" height="550" style="border:none"> </iframe>
+<div class="text-center" style="float:right;width:260px;margin-left:50px">
+    <iframe src="http://bl.ocks.org/lud/raw/7869565/" width="250" height="550" style="border:none"> </iframe>
 </div>
+
+ insert introduction text here ^^
+
+<div class="clearfix"></div>
+
+
 ## Data
 
 First we have some lists specifications. In a real world app, this
-would come from the server. Theese specifiactions are objects with the
-following members :
+would come from the server.
+
+
+
+{% highlight javascript %}
+    var listspecs =
+        [ {n:'resupply', s:1, wf:['later','incart'],    label:'Goods to resupply', icon:'refresh'       }
+        , {n:'later',    s:2, wf:['incart'],            label:'',                  icon:'time'          }
+        , {n:'incart',   s:3, wf:['resupply','athome'], label:'',                  icon:'shopping-cart' }
+        , {n:'athome',   s:4, wf:['resupply'],          label:'',                  icon:'home'          }
+        ];
+{% endhighlight %}
+
+Theese specifiactions are objects with the following members :
 
 * `n` is the simple name of the list. It must be a valid unique
 identifier because it's used as function names and CSS
@@ -28,24 +45,10 @@ other lists an item from this list can be moved to.
 * `icon` is an identifier for an image. This could be a
 filename or anything. Here we use Twitter Bootstrap and
 it's Glyphicons. So this is a "glyphicon-" prefixed CSS
-class name
+class name.
 
-Here are our lists :
+Then we have some items :
 
-{% highlight javascript %}
-    var listspecs =
-        [ {n:'resupply', s:1, wf:['later','incart'],    label:'Goods to resupply', icon:'refresh'       }
-        , {n:'later',    s:2, wf:['incart'],            label:'',                  icon:'time'          }
-        , {n:'incart',   s:3, wf:['resupply','athome'], label:'',                  icon:'shopping-cart' }
-        , {n:'athome',   s:4, wf:['resupply'],          label:'',                  icon:'home'          }
-        ];
-{% endhighlight %}
-
-Then we have some items.
-
-`n` is the name of the item, and `s` shows in which lists the item is
-when we load the page. This `s` property matches with the `s` property
-of the lists specs above.
 
 {% highlight javascript %}
     var allItems = [ {s: 1, n: 'Oranges'}
@@ -59,6 +62,10 @@ of the lists specs above.
                    , {s: 1, n: 'a new Laptop'}
                    ];
 {% endhighlight %}
+
+`n` is the name of the item, and `s` shows in which lists the item is
+when we load the page. This `s` property matches with the lists' `s`
+property.
 
 Finally, we want to display multiple lists of items. D3 likes data as
 lists, so we will create as many lists (Arrays) as there are lists
@@ -341,3 +348,4 @@ class.
         return 'glyphicon glyphicon-'+i;
     }
 {% endhighlight %}
+
