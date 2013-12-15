@@ -1,6 +1,7 @@
 ---
 title: "Make a shoplist app with D3"
 layout: default
+lang: en
 ---
 
 # A shoplist with D3

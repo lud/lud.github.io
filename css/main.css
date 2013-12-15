@@ -36,6 +36,10 @@ h1 {
     margin:0;
 }
 
+ul.posts li span {
+    font-family: monospace;
+}
+
 @media (min-width: 992px) {
     body {
         background:url('img/paper.png') #eee;
