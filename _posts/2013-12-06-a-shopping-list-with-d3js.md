@@ -19,8 +19,8 @@ passed to `.attr(...)` receive as parameters. My code here is really
 not hard but I do not explain theese concepts. ([Some doc
 here](http://bost.ocks.org/mike/selection/)).
 
-My code is far from perfect, feel free to send pull requests
-[here](https://gist.github.com/lud/7869565).
+My code is far from perfect, feel free to send comments
+[here](https://gist.github.com/lud/7869565), or fork and let me know.
 
 ### What is it ?
 
