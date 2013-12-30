@@ -38,6 +38,13 @@ h1 {
 ul.posts li span {
     font-family: monospace;
 }
+ul.posts li > * {
+    vertical-align: middle;
+}
+ul.posts a img {
+    position:relative;
+    top:-1px;
+}
 
 @media (min-width: 992px) {
     body {
