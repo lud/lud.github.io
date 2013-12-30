@@ -1,10 +1,10 @@
 ---
-title: "Make a shoplist app with D3"
+title: "Make a shopping list app with D3"
 layout: default
 lang: en
 ---
 
-# A shoplist with D3
+# A shopping list with D3
 
 D3js is a fantastic tool to work with graphics in javascript. But here
 I want to show that it's also excellent to do whatever you want as
@@ -19,7 +19,7 @@ passed to `.attr(...)` receive as parameters. My code here is really
 not hard but I do not explain theese concepts. ([Some doc
 here](http://bost.ocks.org/mike/selection/)).
 
-My code is far from perfect, It would be glad to get pull requests
+My code is far from perfect, feel free to send pull requests
 [here](https://gist.github.com/lud/7869565).
 
 ### What is it ?
@@ -33,7 +33,7 @@ This is a simple application I use to manage the goods I have in my
 kitchen. At any time I know what I have at home, and what I need to
 buy. So, if I am in a grocer's shop because I suddenly want to eat
 some chocolate, I can consult this app on my smartphone and buy what I
-need.
+need else.
 
 It consists of four lists of items, with buttons to move items from
 one list to another.
@@ -62,6 +62,10 @@ When I'm done shopping, I send all the items in my cart to the
 class="glyphicon glyphicon-home"></span> </button> and I know that I
 have them. Except if my car burns in a car accident, but this
 application does not support car accidents ...
+
+Finally, if I eat the last carot at home, I can send "Carots" to the
+top with this button : <button class="btn btn-primary btn-xs">   <span
+class="glyphicon glyphicon-refresh"></span> </button>.
 
 I use a different web page to add or remove items from the
 application. I do this at home on a computer with a wide screen, this
