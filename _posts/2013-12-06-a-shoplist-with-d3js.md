@@ -26,7 +26,7 @@ My code is far from perfect, It would be glad to get pull requests
 
 <div class="text-center" style="float:right;width:260px;margin-left:50px">
     <iframe src="http://bl.ocks.org/lud/raw/7869565/" width="250" height="550" style="border:none"> </iframe>
-    <a href="/lud/raw/7869565/" target="_blank">Open in a new window.</a>
+    <a href="http://bl.ocks.org/lud/raw/7869565/" target="_blank">Open in a new window.</a>
 </div>
 
 This is a simple application I use to manage the goods I have in my
