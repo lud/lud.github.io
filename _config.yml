@@ -1,6 +1,6 @@
 name: "lud"
 description: "Let's dev tonight"
 url: "http://lud.github.io"
-permalink: pretty
+permalink: "/:categories/:title/"
 pygments: true
 markdown: rdiscount

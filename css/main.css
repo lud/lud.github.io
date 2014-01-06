@@ -35,17 +35,35 @@ h1 {
     margin:0;
 }
 
-ul.posts li span {
+ul.posts li span.date {
     font-family: monospace;
 }
-ul.posts li > * {
-    vertical-align: middle;
-}
-ul.posts a img {
-    position:relative;
-    top:-1px;
+
+ul.posts li {
+    margin-bottom: .5em;
 }
 
+ul.posts.all a {
+    padding-left:20px;
+}
+ul.posts.all li[lang] a {
+    background:transparent left center no-repeat;
+}
+ul.posts.all li[lang="en"] a {
+    background-image:url('img/en.png');
+}
+ul.posts.all li[lang="fr"] a {
+    background-image:url('img/fr.png');
+}
+
+@media (min-width: 768px) {
+    p {
+        text-align:justify;
+    }
+    .global {
+        padding-bottom: 100px;
+    }
+}
 @media (min-width: 992px) {
     body {
         background:url('img/paper.png') #eee;
@@ -56,13 +74,10 @@ ul.posts a img {
         -moz-border-radius: 3px;
         -webkit-border-radius: 3px;
         box-shadow: 1px 1px 5px 1px #AAAAAA;
-        padding:0 5em;
+        padding:0 5em 2em;
     }
     .container {
         width: 970px !important;
-    }
-    p {
-        text-align:justify;
     }
 
 }

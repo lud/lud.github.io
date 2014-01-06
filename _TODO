@@ -1,2 +1,5 @@
 - passer les icones du CV en un sprite
 - custom bootstrap au lieu de mettre des overrides
+- Ajouter la date des posts en haut des posts
+- Faire un layout pour les posts et un autre pour les pages
+- Virer la page about et mettre une page contact

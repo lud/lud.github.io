@@ -1,0 +1,70 @@
+---
+title: "Lud's Dev Blog"
+layout: default
+---
+
+
+
+<h1>CFML Test</h1>
+
+<div class="row">
+    <div class="col-sm-6">
+        <h2 class="h4">Blog posts in English</h2>
+
+        <ul class="posts">
+          {% for post in site.posts %}
+            {% if post.lang == 'en' %}
+                <li lang="{{ post.lang }}">
+                    <a href="{{ post.url }}">{{ post.title }}</a><br/>
+                    <span class="date">{{ post.date | date_to_string }}</span>
+                    {% comment %}
+                    <span class="small">
+                    in {{ post.categories | array_to_sentence_string }}
+                    </span>
+                    {% endcomment %}
+                </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+    </div>
+
+    <div class="col-sm-6">
+        <h2 class="h4">Billets en Français</h2>
+
+        <ul class="posts">
+          {% for post in site.posts %}
+            {% if post.lang == 'fr' %}
+                <li lang="{{ post.lang }}">
+                    <a href="{{ post.url }}">{{ post.title }}</a><br/>
+                    <span class="date">{{ post.date | date_to_string }}</span>
+                    {% comment %}
+                    <span class="small">
+                    dans {{ post.categories | array_to_sentence_string | | replace:' and ',' et ' }}
+                    </span>
+                    {% endcomment %}
+                </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    $(function(){
+        $('#all-lang').on('click',function(){
+            $('ul.posts').addClass('all');
+            $('ul.posts li').show();
+        });
+        $('.lang-switch').on('click',function(){
+            $('ul.posts').removeClass('all');
+            $('ul.posts li').hide();
+            $('ul.posts li[lang="'+$(this).attr('data-lang')+'"]').show();
+        });
+        var $langswitchs = $('#lang-switch li a');
+        $langswitchs.on('click',function(){
+            $langswitchs.parent().removeClass('active');
+            $(this).parent('li').addClass('active');
+        });
+    })
+</script>

@@ -1,10 +1,11 @@
 ---
-title: "Make a shopping list app with D3"
+title: "Make a shopping list app with D3js"
 layout: default
 lang: en
+categories: d3js
 ---
 
-# A shopping list with D3
+# A shopping list with D3js
 
 D3js is a fantastic tool to work with graphics in javascript. But here
 I want to show that it's also excellent to do whatever you want as
