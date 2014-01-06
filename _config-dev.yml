@@ -1,6 +1,6 @@
 name: "lud"
 description: "Let's dev tonight"
 url: "http://localhost:4000"
-permalink: "/:categories/:title/"
+permalink: "/blog/:title/"
 pygments: true
 markdown: rdiscount

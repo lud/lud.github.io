@@ -1,6 +1,6 @@
 ---
 title: "Post sans langue"
-layout: default
+layout: posts
 categories: test dev
 ---
 

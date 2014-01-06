@@ -1,6 +1,6 @@
 ---
 title: "Make a shopping list app with D3js"
-layout: default
+layout: posts
 lang: en
 categories: d3js
 ---
@@ -135,7 +135,7 @@ filename or anything. Here we use Twitter Bootstrap and
 it's Glyphicons. So this is a "glyphicon-" prefixed CSS
 class name.
 
-Then we have some items :
+Then we have some items, they would come from the server too :
 
 
 {% highlight javascript %}

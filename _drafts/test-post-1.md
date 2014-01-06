@@ -1,6 +1,6 @@
 ---
 title: "Test post 1"
-layout: default
+layout: posts
 lang: en
 categories: test dev
 ---

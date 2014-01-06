@@ -22,18 +22,6 @@
 <div class="container global">
     {{ content }}
     <br/>
-    <p class="visible-xs">Bootstrap Layout : <b>X Small</b></p>
-    <p class="visible-sm">Bootstrap Layout : <b>Small</b></p>
-    <p class="visible-md">Bootstrap Layout : <b>Medium</b></p>
-    <p class="visible-lg">Bootstrap Layout : <b>Large</b></p>
-    Tags : {% for cat in page.categories %}{{ cat }} {% endfor %}
+    {% include footer.html %}
 </div>
 
-<script>
-    $(function(){
-        $('#onlycode').on('click', function(evt) {
-            evt.preventDefault();
-            $('.global').toggleClass('onlycode');
-        });
-    });
-</script>
