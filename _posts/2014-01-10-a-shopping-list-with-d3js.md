@@ -82,7 +82,6 @@ from a list to another ; notably from `later` to "Goods to resupply"
 implement them but I was not happy with the result. The code was very
 short but the look and feel was not good.
 
-<div class="clearfix"></div>
 
 ## How we make it ?
 

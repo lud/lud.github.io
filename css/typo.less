@@ -1,0 +1,62 @@
+
+
+
+@vtextBase: 22;
+
+// * Mixins
+.vtext (@fontSize, @rows: 1, @bottomRows: 0, @topRows: 0, @remove: 0) {
+    font-size:     @fontSize * 1px !important;
+    line-height:   ((@rows * @vtextBase) - @remove) * 1px;
+    margin-top:    (@topRows * @vtextBase) * 1px;
+    margin-bottom: (@bottomRows * @vtextBase) * 1px;
+}
+
+.vblock (@parent-font-size-px: @air-font-size, @rows: 1, @topRows: 0, @bottomRows: 0, @remove: 0) {
+    height: (((@rows * @vtextBase) - @remove) / @parent-font-size-px) * 1em;
+}
+
+h1,h2,h3,h4,h5,h6,p,li,ul,blockquote,code,pre,a
+{
+    margin:0;padding:0;font-weight:400;
+}
+
+@vtextBase: 24;
+@serif: Georgia, 'Times New Roman', serif;
+@sans: 'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif;
+
+.global {
+    font-family: @serif;
+    .vtext(16)
+}
+
+.global{
+    // background: url('img/bg-line-@{vtextBase}.png') white;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    // font-family: @sans;
+    // font-weight: bold;
+    // color:#515151;
+}
+
+h1 {
+    .vtext(34,2,1,2);
+    background:none;
+}
+
+h2 {
+    .vtext(25,2,1,1);
+    background:none;
+}
+
+h3 {
+    .vtext(20,1,1,1);
+    background:none;
+}
+
+p {
+    .vtext(16,1,1);
+    code {
+        vertical-align: bottom;
+    }
+}

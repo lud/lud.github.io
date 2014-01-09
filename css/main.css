@@ -56,28 +56,31 @@ ul.posts.all li[lang="fr"] a {
     background-image:url('img/fr.png');
 }
 
-@media (min-width: 768px) {
+@media (min-width: 550px) {
     p {
         text-align:justify;
     }
+}
+@media (min-width: 768px) {
     .global {
         padding-bottom: 100px;
+    }
+    .container {
+        width: 750px !important;
     }
 }
 @media (min-width: 992px) {
     body {
-        background:url('img/paper.png') #eee;
+        background:url('img/paper.png') #fdfdfd;
     }
     .global {
-        background:#ffffff;
+        background:#fdfdfd;
         border-radius: 3px;
         -moz-border-radius: 3px;
         -webkit-border-radius: 3px;
         box-shadow: 1px 1px 5px 1px #AAAAAA;
         padding:0 5em 2em;
     }
-    .container {
-        width: 970px !important;
-    }
+
 
 }
