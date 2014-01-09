@@ -17,7 +17,6 @@ pre,code {
 
 h1 {
     background: url("img/bg-grid.png") transparent;
-    color: #444444;
     margin-top: 0;
     padding-top: 20px;
 }
@@ -56,7 +55,12 @@ ul.posts.all li[lang="fr"] a {
     background-image:url('img/fr.png');
 }
 
-@media (min-width: 550px) {
+.post-content {
+    max-width: 570px !important;
+    margin:auto;
+}
+
+@media (min-width: 570px) {
     p {
         text-align:justify;
     }
@@ -64,9 +68,6 @@ ul.posts.all li[lang="fr"] a {
 @media (min-width: 768px) {
     .global {
         padding-bottom: 100px;
-    }
-    .container {
-        width: 750px !important;
     }
 }
 @media (min-width: 992px) {

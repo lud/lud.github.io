@@ -111,10 +111,30 @@ would come from the server.
 
 {% highlight javascript %}
     var listspecs =
-        [ {n:'resupply', s:1, wf:['later','incart'],    label:'Goods to resupply', icon:'refresh'       }
-        , {n:'later',    s:2, wf:['incart'],            label:'',                  icon:'time'          }
-        , {n:'incart',   s:3, wf:['resupply','athome'], label:'',                  icon:'shopping-cart' }
-        , {n:'athome',   s:4, wf:['resupply'],          label:'',                  icon:'home'          }
+        [ { n: 'resupply'
+          , s: 1
+          , wf: ['later', 'incart']
+          , label: 'Goods to resupply'
+          , icon: 'refresh'
+          }
+        , { n: 'later'
+          , s: 2
+          , wf: ['incart']
+          , label: ''
+          , icon: 'time'
+          }
+        , { n: 'incart'
+          , s: 3
+          , wf: ['resupply', 'athome']
+          , label: ''
+          , icon: 'shopping-cart'
+          }
+        , { n: 'athome'
+          , s: 4
+          , wf: ['resupply']
+          , label: ''
+          , icon: 'home'
+          }
         ];
 {% endhighlight %}
 

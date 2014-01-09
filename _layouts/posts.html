@@ -9,10 +9,11 @@
 
 
 <div class="container global">
-    {{ content }}
-    <br/>
-    {% include footer.html %}
-    Tags : {% for cat in page.categories %}{{ cat }} {% endfor %}
+    <div class="post-content">
+        {{ content }}
+        {% include footer.html %}
+        <p>Tags : {% for cat in page.categories %}{{ cat }} {% endfor %}</p>
+    </div>
 </div>
 
 
