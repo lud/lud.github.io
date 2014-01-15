@@ -100,7 +100,7 @@ building is too thick for the waves !).
 
 **Update:** I like short variable names, but it can be confusing for
 some readers. I speak a lot about `n` and `s` properties. Think
-about them in terms of `name` and `id`, respectively.
+about them in terms of `name` and `id/status_id` (list section), respectively.
 
 ### Data
 

@@ -1,5 +1,5 @@
 ---
-title: "Post de test 1"
+title: "Post de test 1 - Typo"
 layout: posts
 lang: fr
 categories: test dev

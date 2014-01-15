@@ -2,6 +2,17 @@ body {
     background:#ffffff;
 }
 
+nav.navbar-inverse {
+    background-color:#444 !important;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    color: #ddd;
+}
+.navbar-inverse a.navbar-brand {
+    color: #ddd;
+}
+
 pre {
     border:none;
     border-radius:0;
@@ -71,17 +82,5 @@ ul.posts.all li[lang="fr"] a {
     }
 }
 @media (min-width: 992px) {
-    body {
-        background:url('img/paper.png') #fdfdfd;
-    }
-    .global {
-        background:#fdfdfd;
-        border-radius: 3px;
-        -moz-border-radius: 3px;
-        -webkit-border-radius: 3px;
-        box-shadow: 1px 1px 5px 1px #AAAAAA;
-        padding:0 5em 2em;
-    }
-
 
 }

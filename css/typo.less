@@ -68,8 +68,8 @@ h1,h2,h3,h4,h5,h6,p,li,ul,blockquote,code,pre,a
 @tempo: 12;
 @baseBottomRows: 2;
 @serif: Georgia, 'Times New Roman', serif;
-@sans: 'MavenProRegular', 'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif;
-@titles: 'PancettaPro';
+@sans: 'pt_sansregular', 'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif;
+@titles: 'Bree Serif', serif;
 
 body {
     font-family: @sans;
@@ -95,62 +95,65 @@ body {
    109.65
 */
 
+.global {
 
-h1,h2,h3,h4,h5,h6 {
-    font-family: @titles;
-    // font-weight: bold;
-    // color:#515151;
-}
-
-h1 {
-    .vfit(41,4);
-    background:none;
-}
-
-h2 {
-    .vfit(33,2);
-    background:none;
-}
-
-h3 {
-    .vfit(25.9);
-    background:none;
-}
-
-p {
-    .vfit(16);
-    code {
-        vertical-align: bottom;
+    h1,h2,h3,h4,h5,h6 {
+        font-family: @titles;
+        // font-weight: bold;
+        // color:#515151;
     }
-}
 
-.highlight pre {
-    // .vbox(1);
-    .vfit(14,1);
-    padding-bottom: @tempo * 1px;
-}
-
-li {
-    .vfit(16, 0, 1);
-    code {
-        vertical-align: bottom;
+    h1 {
+        .vfit(41,4);
+        background:none;
     }
-}
 
-ul {
-    .vbox();
-}
+    h2 {
+        .vfit(33,2);
+        background:none;
+    }
 
-
-.mini {
-    position:absolute;
-    right: 87px;
-    width:300px;
-    padding:0px 10px 0;
+    h3 {
+        .vfit(25.9);
+        background:none;
+    }
 
     p {
-        .vtext (12, 2, 0, @baseBottomRows, 0, 18);
-        font-family: @serif;
-        font-style: italic;
+        .vfit(16);
+        code {
+            vertical-align: bottom;
+        }
+    }
+
+    .highlight pre {
+        // .vbox(1);
+        .vfit(14,1);
+        padding-bottom: @tempo * 1px;
+    }
+
+    li {
+        .vfit(16, 0, 1);
+        code {
+            vertical-align: bottom;
+        }
+    }
+
+
+    ul {
+        .vbox();
+    }
+
+
+    .mini {
+        position:absolute;
+        right: 87px;
+        width:300px;
+        padding:0px 10px 0;
+
+        p {
+            .vtext (12, 2, 0, @baseBottomRows, 0, 18);
+            font-family: @serif;
+            font-style: italic;
+        }
     }
 }
