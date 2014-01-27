@@ -1,0 +1,86 @@
+body {
+    background:#ffffff;
+}
+
+nav.navbar-inverse {
+    background-color:#444 !important;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    color: #ddd;
+}
+.navbar-inverse a.navbar-brand {
+    color: #ddd;
+}
+
+pre {
+    border:none;
+    border-radius:0;
+    border-left:6px solid #ECECEC;
+    padding-left:1em;
+    margin:1em 0;
+}
+
+pre,code {
+    background:#FCFAFA;
+    color:#555;
+}
+
+h1 {
+    background: url("img/bg-grid.png") transparent;
+    margin-top: 0;
+    padding-top: 20px;
+}
+
+.global li {
+    list-style: square outside none;
+}
+
+
+.onlycode p  ,
+.onlycode ul {
+    display:none;
+}
+.onlycode pre {
+    margin:0;
+}
+
+ul.posts li span.date {
+    font-family: monospace;
+}
+
+ul.posts li {
+    margin-bottom: .5em;
+}
+
+ul.posts.all a {
+    padding-left:20px;
+}
+ul.posts.all li[lang] a {
+    background:transparent left center no-repeat;
+}
+ul.posts.all li[lang="en"] a {
+    background-image:url('img/en.png');
+}
+ul.posts.all li[lang="fr"] a {
+    background-image:url('img/fr.png');
+}
+
+.post-content {
+    max-width: 570px !important;
+    margin:auto;
+}
+
+@media (min-width: 570px) {
+    p {
+        text-align:justify;
+    }
+}
+@media (min-width: 768px) {
+    .global {
+        padding-bottom: 100px;
+    }
+}
+@media (min-width: 992px) {
+
+}
