@@ -10,12 +10,12 @@ categories: [erlang, dev ]
 
 
 Depuis quelques années, les développeurs Erlang disposent de
-[Rebar](https://github.com/basho/rebar) pour gérer les dépendances de leur
-projet facilement. Cet outil permet également de créer des exécutables, de
-générer des *releases*, et, plus généralement, de gérer facilement le
-développement d'une application.
+[Rebar](https://github.com/basho/rebar) pour gérer facilement les dépendances
+de leurs projets. Cet outil permet également de créer des exécutables, de
+générer des *releases*, et plus généralement de gérer le développement d'une
+application Erlang.
 
-Il existe d'autres outils équivalents à Rebar, la petite manipulation toute
+Il existe d'autres outils équivalents à Rebar. La petite manipulation toute
 simple que je montre ici s'adapte facilement à n'importe quel autre outil.
 Cela peut même être fait manuellement ou avec git.
 
@@ -28,43 +28,41 @@ sont parfois disponibles dans le système de base, comme Mnesia ou Crypto (bien
 que celles-ci puissent faire partie de paquets spécifiques), parfois il faut
 aller faire son marché sur Github.
 
-Pour gérer ses dépendances avec Rebar, il faut spécifier les dépendances dans
-le fichier `rebar.config`. Si on souhaite utiliser `gproc` dans trois
-applications différentes, chacune d'entre elles aura une copie de `gproc` dans
-son dossier `deps`.
-
-Cela peut donc vite devenir encombrant. Quand on développe soi-même une
-application A qui sert à plusieurs de nos autres projets (B,C,D) et qu'on veut
+Si on souhaite utiliser `gproc` dans trois applications différentes, chacune
+d'entre elles aura une copie de `gproc` dans son dossier `deps`. Cela peut
+vite devenir encombrant. Et quand on développe soi-même une application `A`
+qui sert à plusieurs de nos autres projets (`B`, `C` et `D`) et qu'on veut
 faire une modification dessus, il faut :
 
-1. Faire la modification dans notre application A
-2. Aller dans notre autre projet B qui l'utilise en tant que dépendance
-3. Relance un petit `rebar get-deps` afin de la copier dans `deps`
+1. Faire la modification dans notre application `A`
+2. Aller dans notre autre projet `B` qui l'utilise en tant que dépendance
+3. Effectuer un petit `rebar update-deps` afin de la copier dans `deps`
 
-Et si notre projet B tracke notre application A depuis Github :
+Si notre projet `B` tracke notre application `A` depuis Github :
 
-1. Faire la modification dans notre application A
+1. Faire la modification dans notre application `A`
 2. Commiter et envoyer sur Github
-3. Aller dans notre autre projet B qui l'utilise en tant que dépendance
-4. Relance un petit `rebar get-deps` afin de la copier dans `deps`
+3. Aller dans notre autre projet `B` qui l'utilise en tant que dépendance
+4. Relancer un petit `rebar update-deps` afin de la copier dans `deps`
 
-C'est ... relou, voilà. Une raison de plus pour n'avoir qu'une seule copie de
-A en local. On peut la commiter *a posteriori*.
+Et ce pour chacun de nos projets `B`, `C` et `D` ; c'est ... relou ! Une
+raison de plus pour n'avoir qu'une seule copie de `A` en local. On peut la
+commiter *a posteriori* sur Github, on utilise directement le code local.
 
 
 ## Une application pour les gouverner toutes
 
 
-Nous allons donc créer une nouvelle application, qui ne servira qu'à gérer nos
+Nous allons créer une nouvelle application, qui servira uniquement à gérer nos
 applications tierces.
 
 
 ### Télécharger toutes les dépendances en local
 
 
-Il faut commencer par choisir un dossier approrié. Personnellement j'ai un
-dossier `src` dans mon dossier *home* qui contient tous mes projets. Ensuite,
-nous créons on dossier contenant l'application rebar, je le nomme `erllib` :
+La première étape consiste à choisir un dossier approrié. Personnellement j'ai
+un dossier `src` dans mon *home* qui contient tous mes projets. Puis
+nous créons un dossier contenant notre application que je nomme `erllib` :
 
 {% highlight bash %}
 cd
@@ -79,9 +77,9 @@ Ensuite, créer le fichier de configuration pour Rebar.
 touch rebar.config
 {% endhighlight %}
 
-Il faut ensuite éditer ce fichier de configuration avec votre éditeur favori.
-Ici nous allons avoir en local les applications suivantes : `gproc`, `lager`,
-`pmod_transform` et `parse_trans`. Voici le contenu de ce fichier :
+Le fichier étant créé physiquement, nous allons indiquer comme dépendances les
+projets suivants : `gproc`, `lager`, `pmod_transform` et `parse_trans`. Voici
+le contenu du fichier `rebar.config` :
 
 {% highlight erlang %}
 {deps, [
@@ -130,7 +128,8 @@ Lors du démarrage, le *runtime* cherche automatiquement un fichier `.erlang`
 dans le dossier courant, puis dans le *home* de l'utilisateur s'il n'en trouve
 pas.
 
-Nous allons donc créer ce fichier dans notre *home* :
+Nous allons utiliser ce fichier pour charger nos librairies. Pour commencer,
+nous devons créer ce fichier dans notre *home* :
 
 {% highlight bash %}
 cd
@@ -138,7 +137,7 @@ touch .erlang
 {% endhighlight %}
 
 Ce fichier attend des expressions comparables à celles que l'on entre dans le
-shell Erlang. Voici le contenu du fichier pour charger ces librairies :
+*shell* Erlang. Voici le contenu du fichier pour charger ces librairies :
 
 {% highlight erlang %}io:format("Chargement des librairies ... ").
 LoadLib =
@@ -161,16 +160,16 @@ LoadLib =
 io:format("ok~n").
 {% endhighlight %}
 
-Plusieurs chose concernant ce code :
+Plusieurs choses concernant ce code :
 
-* Ne pas oublier les dépendances de nos dépendances ! (`edown` et `goldrush`)
-* Ici, j'ai vonlontairement utilisé une `fun` et une compréhension de liste pour montrer qu'on est assez libre de faire ce qu'on veut dans ce fichier. Tout comme dans le *shell*, il n'est pas possible d'y définir des fonctions, d'où l'utilisation de cette `fun`.
+* Ne pas oublier les dépendances de nos dépendances ! (`edown` et `goldrush`.)
+* J'ai vonlontairement utilisé une `fun` et une compréhension de liste pour montrer qu'on est assez libre de faire ce qu'on veut dans ce fichier. Tout comme dans le *shell*, il n'est pas possible d'y définir des fonctions, d'où l'utilisation de cette `fun`.
 * La fun est un peut grande, dans notre cas on est sûrs de nos chemins, donc un simple `code:add_path` est nécessaire. Mais dans le cas ou nos librairies sont éparpillées dans plusieurs dossiers, c'est toujours utile de savoir qu'on s'est planté dans un chemin !
-* Notez que pour chaque dépendance, c'est le dossier `ebin` qui est visé, et non la racine du projet. Certains projets peuvent également avoir leurs fichiers `.beam` dans un dossier nommé diféremment, ou bien dans plusieurs dossiers.
+* Notez que pour chaque dépendance, c'est le dossier `ebin` qui est visé, et non la racine du projet. Certains projets peuvent également avoir leurs fichiers `.beam` dans un dossier nommé diféremment, ou même dans plusieurs dossiers.
 
 ### L'heure du test !
 
-Au lancement du shell, on devrait donc avoir le résultat suivant :
+Au lancement du shell, on devrait obtenir le résultat suivant :
 
 {% highlight bash %}
 $ cd /dans/nimporte/quel/dossier

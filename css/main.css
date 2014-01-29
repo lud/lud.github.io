@@ -33,10 +33,10 @@ h1 {
 }
 
 .global ul li {
-    list-style: square inside none;
+    list-style: square outside none;
 }
 .global ol li {
-    list-style: decimal inside none;
+    list-style: decimal outside none;
 }
 
 
@@ -75,7 +75,7 @@ ul.posts.all li[lang="fr"] a {
 }
 
 @media (min-width: 570px) {
-    p {
+    p, li {
         text-align:justify;
     }
 }
