@@ -60,7 +60,7 @@
     height: (((@rows * @tempo) - @remove) / @parent-font-size-px) * 1em;
 }
 
-h1,h2,h3,h4,h5,h6,p,li,ul,blockquote,code,pre,a
+h1,h2,h3,h4,h5,h6,p,li,ul,ol,blockquote,code,pre,a
 {
     margin:0;padding:0;font-weight:400;
 }
@@ -145,6 +145,7 @@ body {
 
     ul, ol {
         .vbox();
+        padding-left:@tempo * 1px;
     }
 
 

@@ -32,13 +32,16 @@ h1 {
     padding-top: 20px;
 }
 
-.global li {
-    list-style: square outside none;
+.global ul li {
+    list-style: square inside none;
+}
+.global ol li {
+    list-style: decimal inside none;
 }
 
 
 .onlycode p  ,
-.onlycode ul {
+.onlycode li {
     display:none;
 }
 .onlycode pre {

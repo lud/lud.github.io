@@ -2,7 +2,7 @@
 title: "Des libraries Erlang globales"
 layout: "posts"
 lang: fr
-categories: erlang
+categories: [erlang, dev ]
 ---
 
 
@@ -41,7 +41,7 @@ faire une modification dessus, il faut :
 2. Aller dans notre autre projet B qui l'utilise en tant que dépendance
 3. Relance un petit `rebar get-deps` afin de la copier dans `deps`
 
-Et si notre projet B tracke notre application A depuis Github : 
+Et si notre projet B tracke notre application A depuis Github :
 
 1. Faire la modification dans notre application A
 2. Commiter et envoyer sur Github
@@ -84,18 +84,18 @@ Ici nous allons avoir en local les applications suivantes : `gproc`, `lager`,
 `pmod_transform` et `parse_trans`. Voici le contenu de ce fichier :
 
 {% highlight erlang %}
-{deps, [ 
+{deps, [
 
-  {gproc,          ".*", 
+  {gproc,          ".*",
   {git, "https://github.com/uwiger/gproc.git", "HEAD"}}
 
-, {lager,          ".*", 
+, {lager,          ".*",
   {git, "https://github.com/basho/lager.git", "HEAD"}}
 
-, {pmod_transform, ".*", 
+, {pmod_transform, ".*",
   {git, "https://github.com/erlang/pmod_transform.git", "HEAD"}}
 
-, {parse_trans,    ".*", 
+, {parse_trans,    ".*",
   {git,  "https://github.com/uwiger/parse_trans.git", "HEAD"}}
 ]}.
 {% endhighlight %}
@@ -141,13 +141,13 @@ Ce fichier attend des expressions comparables à celles que l'on entre dans le
 shell Erlang. Voici le contenu du fichier pour charger ces librairies :
 
 {% highlight erlang %}io:format("Chargement des librairies ... ").
-LoadLib = 
-  fun(Dir) -> 
+LoadLib =
+  fun(Dir) ->
     case code:add_path("/home/lud/src/erllib/deps/" ++ Dir ++ "/ebin")
-     of true -> 
-        ok
-     ; {error,Error} -> 
-        io:format("Erreur du chargement de ~p: ~p~n",[Dir,Error])
+     of true ->
+            ok
+      ; {error,Error} ->
+            io:format("Erreur du chargement de ~p: ~p~n",[Dir,Error])
     end
   end.
 [LoadLib(X) || X <- [
@@ -157,14 +157,14 @@ LoadLib =
   "lager",
   "parse_trans",
   "pmod_transform"
-]]. 
+]].
 io:format("ok~n").
 {% endhighlight %}
 
 Plusieurs chose concernant ce code :
 
 * Ne pas oublier les dépendances de nos dépendances ! (`edown` et `goldrush`)
-* Ici, j'ai vonlontairement utilisé une `fun` et une compréhension de liste pour montrer qu'on est assez libre de faire ce qu'on veut dans ce fichier. Tout comme dans le *shell*, il n'est pas possible d'y définir des fonctions, d'où l'utilisation de cette `fun`. 
+* Ici, j'ai vonlontairement utilisé une `fun` et une compréhension de liste pour montrer qu'on est assez libre de faire ce qu'on veut dans ce fichier. Tout comme dans le *shell*, il n'est pas possible d'y définir des fonctions, d'où l'utilisation de cette `fun`.
 * La fun est un peut grande, dans notre cas on est sûrs de nos chemins, donc un simple `code:add_path` est nécessaire. Mais dans le cas ou nos librairies sont éparpillées dans plusieurs dossiers, c'est toujours utile de savoir qu'on s'est planté dans un chemin !
 * Notez que pour chaque dépendance, c'est le dossier `ebin` qui est visé, et non la racine du projet. Certains projets peuvent également avoir leurs fichiers `.beam` dans un dossier nommé diféremment, ou bien dans plusieurs dossiers.
 

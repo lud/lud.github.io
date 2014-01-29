@@ -1,0 +1,17 @@
+---
+title: "Lud's Dev Blog"
+---
+
+{
+    "status":"ok",
+    "data": [ {% for post in site.posts %}
+                {
+                    "lang": "{{ post.lang }}",
+                    "url": "{{ site.url }}{{ post.url }}",
+                    "title": "{{ post.title }}",
+                    "date": "{{ post.date }}",
+                    "tags": [{% for c in post.categories %}"{{ c }}" {% if c != post.categories.last %}, {% endif %}{% endfor %}]
+                } {% if post != site.posts.last %}, {% endif %}
+    {% endfor %}
+            ]
+}
